@@ -122,7 +122,8 @@ code {
 
 /* Error area */
 .red-border {
-  border: 3px solid red;
+  box-shadow: 0 0.3rem 1.2rem 0 rgb(5 10 15 / 19%);
+  border-radius: 7px;
   padding: 2em;
 }
 
