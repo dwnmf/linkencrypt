@@ -141,7 +141,7 @@ async function randomLink() {
 function main() {
   if (window.location.hash) {
     document.querySelector("#encrypted-url").value =
-      `https://jstrieb.github.io/link-lock/${window.location.hash}`;
+      `https://d1nz0ff.github.io/linkencrypt/${window.location.hash}`;
 
     window.location.hash = "";
   }
