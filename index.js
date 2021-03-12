@@ -48,9 +48,9 @@ async function main() {
     let hint, password;
     if ("h" in params) {
       hint = params["h"];
-      password = prompt(`Please enter the password to unlock the link.\n\nHint: ${hint}`);
+      password = prompt(`Пожалуйста введите пароль,чтобы разблокировать ссылку\n\nHint: ${hint}`);
     } else {
-      password = prompt("Please enter the password to unlock the link.");
+      password = prompt("Пожалуйста введите пароль,чтобы разблокировать ссылку");
     }
 
     // Decrypt and redirect if possible
