@@ -151,7 +151,7 @@ function onCopy(id) {
 
   // Alert the user that the text was successfully copied
   const alertArea = document.querySelector(".alert");
-  alertArea.innerText = `Copied ${output.value.length} characters`;
+  alertArea.innerText = `Скопировано ${output.value.length} символов`;
   alertArea.style.opacity = "1";
   setTimeout(() => { alertArea.style.opacity = 0; }, 3000);
 
