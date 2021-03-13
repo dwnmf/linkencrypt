@@ -21,7 +21,9 @@ body {
 p {
   text-align: justify;
 }
-
+p.copyright {
+  display: none;
+}
 ul, ol {
   padding-left: 1em;
 }
