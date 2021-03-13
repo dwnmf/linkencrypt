@@ -12,6 +12,7 @@ body {
 }
 .contin {
   box-shadow:0 0.3rem 1.2rem 0 rgb(5 10 15 / 19%);
+  padding:15px;
 }
 :active, :hover, :focus {
     outline: 0;
