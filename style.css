@@ -9,7 +9,9 @@ body {
   display: block;
   margin: auto;
   max-width: 66ch;
-  box-shadow: 0 0.3rem 1.2rem 0 rgb(5 10 15 / 19%);
+}
+.contin {
+  box-shadow:0 0.3rem 1.2rem 0 rgb(5 10 15 / 19%);
 }
 :active, :hover, :focus {
     outline: 0;
