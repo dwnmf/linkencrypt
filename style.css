@@ -26,9 +26,9 @@ ol li {
 
 button {
   padding: 11px;
-  background: rgb(95, 158, 160);
-  color: white;
-  border: 0.5px solid white;
+  background: #fff;
+  color: black;
+  border: 1px solid #e1e4e8;
   border-radius: 5px;
   margin-top: 5px;
   margin-right: 5px;
