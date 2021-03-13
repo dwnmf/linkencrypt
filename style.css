@@ -18,6 +18,7 @@ body {
   display: block;
   margin: auto;
   max-width: 66ch;
+  box-shadow: 0 0.3rem 1.2rem 0 rgb(5 10 15 / 19%);
 }
 
 p {
@@ -117,6 +118,7 @@ code {
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
 }
 
 
