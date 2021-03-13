@@ -76,20 +76,20 @@
   <!-- Main form -->
   <div class="form">
     <div class="labeled-input">
-      <label for="url">Ссылка</label>
+      <label for="url">ссылка</label>
       <input type="url" id="url" placeholder="https://" oninvalid="if (!this.validity.customError) this.setCustomValidity('Please enter a valid URL. Make sure to include \'http://\' or \'https://\' at the beginning.')" oninput="this.setCustomValidity('')" required />
     </div>
     <div class="labeled-input hint">
-      <label for="url">Подсказка (необязательно)</label>
+      <label for="url">подсказка (необязательно)</label>
       <textarea id="hint" rows="1"></textarea>
     </div>
     <div class="split-row">
       <div class="labeled-input password">
-        <label for="password">Пароль</label>
+        <label for="password">пароль</label>
         <input type="password" id="password" />
       </div>
       <div class="labeled-input confirm-password">
-        <label for="confirm-password">Подтвердить пароль</label>
+        <label for="confirm-password">подтвердить пароль</label>
         <input type="password" id="confirm-password" oninput="this.setCustomValidity('')" />
       </div>
     </div>
@@ -115,7 +115,7 @@
 
   <!-- Output area -->
   <div class="output">
-    <label for="output">Зашифрованная Ссылка</label>
+    <label for="output">зашифрованная ссылка</label>
     <input type="text" id="output" readonly/>
     <button id="copy" onclick="onCopy('output')">Копировать</button>
     <a href="../hidden" id="bookmark" target="_blank"><button>Создать скрытую закладку</button></a>
