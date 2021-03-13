@@ -119,7 +119,6 @@
     <label for="output">зашифрованная ссылка</label>
     <input type="text" id="output" readonly/>
     <button id="copy" onclick="onCopy('output')">Копировать</button>
-    <a href="" id="open" target="_blank"><button>Открыть в новой вкладке</button></a>
     <!-- Special incantation to make TinyURL work -->
     <form action="http://tinyurl.com/create.php" method="get" target="_blank" style="display: inline;">
       <input type="hidden" id="source" name="source" value="indexpage" />
@@ -129,7 +128,11 @@
     <a href="https://d1nz0ff.github.io/linkencrypt/create"><button>Расшифровать ссылку</button></a>
     <p class="alert">Скопировано</p>
   </div>
-
+    <center>
+    <div class="open">
+      <a href="" id="open" target="_blank"><button>Открыть в новой вкладке</button></a>
+    </div>
+    </center>
   <!-- Page footer -->
   <footer>
   </footer>
