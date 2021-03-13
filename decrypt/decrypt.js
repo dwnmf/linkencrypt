@@ -1,9 +1,3 @@
-/**
- * Created by Jacob Strieb
- * May 2020
- */
-
-
 
 /*******************************************************************************
  * Helper Functions
@@ -83,13 +77,13 @@ async function onDecrypt() {
   try {
     decrypted = await api.decrypt(encrypted, password, salt, iv);
   } catch {
-    error("Incorrect password!");
+    error("Неверный пароль!");
     return;
   }
 
   // Print the decrypted link to the output area
   document.querySelector("#output").value = decrypted;
-  error("Decrypted!");
+  error("Расшифровано!");
 
   // Update the "Open in New Tab" button to link to the correct place
   document.querySelector("#open").href = decrypted;
