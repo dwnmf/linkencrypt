@@ -42,7 +42,7 @@
   <div class="error red-border" style="display: none">
     <p id="errortext">Ошибка</p>
     <button onclick="main()">Попробуйте ещё раз</button>
-    <a href="https://jstrieb.github.io/link-lock"><button>Lock a link</button></a>
+    <a href="https://d1nz0ff.github.io/linkencrypt/create"><button>Зашифровать ссылку</button></a>
   </div>
 
   <h1>Decrypt Link Lock URLs</h1>
@@ -53,11 +53,11 @@
   <hr />
 
   <div class="form">
-    <label for="encrypted-url">encrypted url</label>
+    <label for="encrypted-url">зашифрованная ссылка</label>
     <input type="url" id="encrypted-url" oninput="document.querySelector('.alert').style.opacity = 0" />
-    <label for="password">password</label>
+    <label for="password">пароль</label>
     <input type="password" id="password" />
-    <button onclick="onDecrypt()">Decrypt</button>
+    <button onclick="onDecrypt()">расшифровать</button>
     <p class="alert">INVISIBLE</p>
   </div>
 
