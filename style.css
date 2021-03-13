@@ -78,8 +78,7 @@ hr {
 }
 
 footer hr {
-  margin-bottom: 1em;
-  border-top: 0.5px solid black;
+  display:none;
 }
 
 footer p {
