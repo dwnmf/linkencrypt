@@ -22,6 +22,7 @@
 </head>
 
 <body onload="main()">
+  <div class="contin"
   <!-- View on GitHub ribbon -->
   <a href="https://github.com/jstrieb/link-lock" target="_blank">
     <img class="ribbon" src="../corner-ribbon-minified.svg" alt="View on GitHub" />
@@ -57,7 +58,7 @@
     <input type="url" id="encrypted-url" oninput="document.querySelector('.alert').style.opacity = 0" />
     <label for="password">пароль</label>
     <input type="password" id="password" />
-    <button onclick="onDecrypt()">расшифровать</button>
+    <button onclick="onDecrypt()">Расшифровать</button>
     <p class="alert">INVISIBLE</p>
   </div>
 
@@ -67,16 +68,17 @@
   <div class="output">
     <label for="output">output</label>
     <input type="text" id="output" readonly/>
-    <button id="copy" onclick="onCopy('output')">Copy</button>
-    <a href="" id="open" target="_blank"><button>Open in New Tab</button></a>
-    <p class="alert" id="copy-alert">Copied</p>
+    <button id="copy" onclick="onCopy('output')">Скопировать</button>
+    <a href="https://d1nz0ff.github.io/linkencrypt/create"><button>На главную</button></a>
+    <a href="" id="open" target="_blank"><button>Открыть в новой вкладке</button></a>
+    <p class="alert" id="copy-alert">Скопировано</p>
   </div>
 
   <!-- Page footer -->
   <footer>
   <hr />
   </footer>
-</body>
+  </div>
 </body>
 
 </html>
