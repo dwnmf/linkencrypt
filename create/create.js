@@ -1,13 +1,3 @@
-/**
- * Created by Jacob Strieb
- * May 2020
- */
-
-
-
-/*******************************************************************************
- * Helper Functions
- ******************************************************************************/
 
 // Highlight the text in an input with a given id
 function highlight(id) {
