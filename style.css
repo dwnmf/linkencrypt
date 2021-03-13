@@ -72,7 +72,7 @@ input, textarea {
 
 input[type="checkbox"] {
   margin-right: 0;
-  border: none;
+  cursor: pointer;
 }
 
 hr {
