@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from datetime import datetime
 import os
-from sqlalchemy import inspect, text
+from sqlalchemy import inspect
 import uuid
 import json
 from functools import wraps
@@ -52,7 +52,7 @@ class Comment(db.Model):
 def before_request():
     if 'sqlite' in app.config['SQLALCHEMY_DATABASE_URI']:
         with db.engine.connect() as connection:
-            connection.execute(text('PRAGMA foreign_keys = ON'))
+            connection.execute('PRAGMA foreign_keys = ON')
 
 def requires_role(roles):
     def decorator(f):
@@ -284,27 +284,28 @@ def internal_error(error):
     return render_template('500.html'), 500
 
 def update_database_schema():
-    inspector = inspect(db.engine)
-    if not inspector.has_table('post'):
+    with app.app_context():
         db.create_all()
-    else:
-        columns = [column['name'] for column in inspector.get_columns('post')]
-        if 'file_type' not in columns:
-            with db.engine.connect() as conn:
-                conn.execute(text('ALTER TABLE post ADD COLUMN file_type VARCHAR(50)'))
-        if 'post_hash' not in columns:
-            with db.engine.connect() as conn:
-                conn.execute(text('ALTER TABLE post ADD COLUMN post_hash VARCHAR(64) UNIQUE'))
-        columns = [column['name'] for column in inspector.get_columns('comment')]
-        if 'post_hash' not in columns:
-            with db.engine.connect() as conn:
-                conn.execute(text('ALTER TABLE comment ADD COLUMN post_hash VARCHAR(64)'))
-        columns = [column['name'] for column in inspector.get_columns('user')]
-        if 'created_at' not in columns:
-            with db.engine.connect() as conn:
-                conn.execute(text('ALTER TABLE user ADD COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP'))
+        inspector = inspect(db.engine)
+        if inspector.has_table('post'):
+            columns = [column['name'] for column in inspector.get_columns('post')]
+            if 'file_type' not in columns:
+                with db.engine.connect() as conn:
+                    conn.execute('ALTER TABLE post ADD COLUMN file_type VARCHAR(50)')
+            if 'post_hash' not in columns:
+                with db.engine.connect() as conn:
+                    conn.execute('ALTER TABLE post ADD COLUMN post_hash VARCHAR(64) UNIQUE')
+        if inspector.has_table('comment'):
+            columns = [column['name'] for column in inspector.get_columns('comment')]
+            if 'post_hash' not in columns:
+                with db.engine.connect() as conn:
+                    conn.execute('ALTER TABLE comment ADD COLUMN post_hash VARCHAR(64)')
+        if inspector.has_table('user'):
+            columns = [column['name'] for column in inspector.get_columns('user')]
+            if 'created_at' not in columns:
+                with db.engine.connect() as conn:
+                    conn.execute('ALTER TABLE user ADD COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP')
 
 if __name__ == '__main__':
-    with app.app_context():
-        update_database_schema()
+    update_database_schema()
     app.run(debug=True)
